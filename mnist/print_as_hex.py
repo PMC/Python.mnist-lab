@@ -27,4 +27,3 @@ print(tabulate)
 hex_tabulate = tabulate.applymap(lambda x: f"{x:02X}" if x != 0 else "  ")
 
 print(hex_tabulate.to_string(index=False))  # index=False removes row numbers
-keras.datasets.
