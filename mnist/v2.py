@@ -1,3 +1,4 @@
+from icecream import ic
 import tensorflow as tf
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.models import Sequential
@@ -32,4 +33,8 @@ model.fit(x_train, y_train, epochs=5, batch_size=32, validation_data=(x_test, y_
 
 # 7. Evaluate the model
 test_loss, test_acc = model.evaluate(x_test, y_test)
-print(f"Test accuracy: {test_acc:.4f}")
+ic(f"Test accuracy: {test_acc:.4f}")
+ic(f"Test loss: {test_loss:.4f}")
+
+# 8. Save the model
+model.save(f"models\mnist_model_{test_acc:.4f}.keras")
